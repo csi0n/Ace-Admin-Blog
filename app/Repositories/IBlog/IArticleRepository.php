@@ -13,5 +13,9 @@ use App\Repositories\IBlog\Ext\IBaseRepository;
 
 interface IArticleRepository extends IBaseRepository
 {
+    /**
+     * @Describe
+     * @return mixed
+     */
     public function GetArticlePaginate();
 }

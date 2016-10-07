@@ -14,10 +14,12 @@
  * 前台路由
  */
 Route::group(['namespace' => 'Blog', 'middleware' => ['web']], function () {
-    Route::get('/', 'IndexController@getIndex');
+    Route::resource('/','IndexController',['only'=>['index']]);
+//    Route::get('/', 'IndexController@getIndex');
     Route::group(['prefix' => 'article'], function () {
-        Route::get('{id}', 'ArticleController@getIndex')->name('article');
+//        Route::get('{id}', 'ArticleController@getIndex')->name('article');
     });
+    Route::resource('article','ArticleController');
 });
 /**
  * 后台路由

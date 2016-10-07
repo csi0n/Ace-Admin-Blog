@@ -15,7 +15,8 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            'layouts.sidebar','App\Http\ViewComposers\MenusComposer'
+            'layouts.sidebar','App\Http\ViewComposers\MenusComposer',
+            'layouts.blog','App\Http\ViewComposers\Blog\MenusComposer'
         );
     }
 

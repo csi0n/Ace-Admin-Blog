@@ -28,7 +28,7 @@ class IndexController extends Controller
         $this->iArticleRepository = $iArticleRepository;
     }
 
-    public function getIndex()
+    public function index()
     {
         $articles = $this->iArticleRepository->GetArticlePaginate();
         return view('blog.index.index', compact('articles'));

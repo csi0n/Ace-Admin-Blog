@@ -43,5 +43,6 @@ class RepositoryProvider extends ServiceProvider
 
         app()->bind(IIndexRepository::class, IndexRepository::class);
         app()->bind(IArticleRepository::class, ArticleRepository::class);
+        app()->bind(\App\Repositories\IBlog\IMenuRepository::class,\App\Repositories\Blog\MenuRepository::class);
     }
 }

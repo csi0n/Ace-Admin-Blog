@@ -20,8 +20,7 @@ class CreateArticlesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->longText('content');
             $table->integer('sort')->default(0);
-            $table->integer('created_at')->nullable();
-            $table->integer('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
