@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin\Blog;
 
 use App\Http\Requests\Admin\Ext\BaseRequest;
 
-class ArticleRequest extends BaseRequest
+class TagRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,19 +25,15 @@ class ArticleRequest extends BaseRequest
     {
         return [
             'id' => 'numeric',
-            'title'=>'required',
-            'content'=>'required',
-            'sort'=>'required|numeric',
+            'name'=>'required',
         ];
     }
 
     public function attributes()
     {
         return [
-            'id'            => trans('labels.blog.article.id'),
-            'title'          => trans('labels.blog.article.title'),
-            'content'          => trans('labels.blog.article.content'),
-            'sort'   => trans('labels.blog.article.sort'),
+            'id'            => trans('labels.blog.tag.id'),
+            'name'          => trans('labels.blog.tag.name'),
         ];
     }
 }

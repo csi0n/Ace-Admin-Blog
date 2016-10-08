@@ -53,6 +53,11 @@ return [
             'addSuccess'=>'添加文章成功',
             'updateSuccess'=>'更新文章成功',
             'updateFailed'=>'更新文章失败',
+        ],
+        'tag'=>[
+            'notFind'=>'没有找到标签',
+            'addFailed'=>'添加标签失败',
+            'addSuccess'=>'添加标签成功',
         ]
     ]
 ];

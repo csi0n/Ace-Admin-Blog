@@ -107,4 +107,19 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         Flash::error(trans('alerts.blog.article.addFailed'));
         return false;
     }
+
+    /**
+     * @Describe 编辑文章
+     * @param $id
+     * @return mixed
+     */
+    public function edit($id)
+    {
+       return $this->verifyArticle($id);
+    }
+
+    public function update($request, $id)
+    {
+        // TODO: Implement update() method.
+    }
 }

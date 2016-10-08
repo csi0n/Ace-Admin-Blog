@@ -12,5 +12,6 @@ return [
     'user' => 'admin.user',
     'blog' => [
         'article' => 'admin.blog.article',
+        'tag'=>'admin.blog.tag',
     ]
 ];

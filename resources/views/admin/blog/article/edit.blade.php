@@ -14,11 +14,11 @@
             <div class="col-xs-12">
                 @include('common.errors')
                 <!-- PAGE CONTENT BEGINS -->
-                {!! Form::open(['route'=>'admin.blog.article.store','method'=>'post','class'=>'form-horizontal','role'=>'form','files'=>true]) !!}
+                {!! Form::open(['route'=>['admin.blog.article.update',$article->id],'method'=>'patch','class'=>'form-horizontal','role'=>'form','files'=>true]) !!}
                     <div class="form-group">
                         {!! Form::label('title',trans('labels.blog.article.title'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                         <div class="col-sm-9">
-                            {!! Form::text('title',old('title'),['class'=>'col-xs-10 col-sm-5','id'=>'title','placeholder'=>trans('labels.blog.article.title')]) !!}
+                            {!! Form::text('title',$article->title,['class'=>'col-xs-10 col-sm-5','id'=>'title','placeholder'=>trans('labels.blog.article.title')]) !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -39,7 +39,7 @@
                                 <div class="widget-body">
                                     <div class="widget-main no-padding">
                                         <div class="md-editor active">
-                                            {!! Form::textarea('content',null,['class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
+                                            {!! Form::textarea('content',$article->content,['class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         {!! Form::label('sort',trans('labels.blog.article.sort'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                         <div class="col-sm-9">
-                            {!! Form::number('sort',old('sort'),['class'=>'col-xs-10 col-sm-5','id'=>'sort','placeholder'=>trans('labels.blog.article.sort')]) !!}
+                            {!! Form::number('sort',$article->sort,['class'=>'col-xs-10 col-sm-5','id'=>'sort','placeholder'=>trans('labels.blog.article.sort')]) !!}
                         </div>
                     </div>
                     <div class="clearfix">

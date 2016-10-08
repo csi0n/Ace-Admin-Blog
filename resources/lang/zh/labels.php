@@ -86,6 +86,16 @@ return [
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
             'action'=>'操作',
+        ],
+        'tag'=>[
+            'id'=>'标签ID',
+            'blogManage'=>'博客管理',
+            'tagManage'=>'标签管理',
+            'list'=>'标签列表',
+            'name'=>'标签名称',
+            'created_at' => '创建时间',
+            'updated_at' => '更新时间',
+            'action'=>'操作',
         ]
     ]
 ];

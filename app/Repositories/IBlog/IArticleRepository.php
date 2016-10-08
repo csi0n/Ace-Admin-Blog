@@ -42,4 +42,13 @@ interface IArticleRepository extends IBaseRepository
      * @return mixed
      */
     public function store($request);
+
+    /**
+     * @Describe 编辑文章
+     * @param $id
+     * @return mixed
+     */
+    public function edit($id);
+
+    public function update($request,$id);
 }
