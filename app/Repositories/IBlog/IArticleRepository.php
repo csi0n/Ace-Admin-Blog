@@ -14,8 +14,25 @@ use App\Repositories\IBlog\Ext\IBaseRepository;
 interface IArticleRepository extends IBaseRepository
 {
     /**
-     * @Describe
+     * @Describe  分页显示文章
      * @return mixed
      */
     public function GetArticlePaginate();
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 显示文章详情
+     * @param $id
+     * @return mixed
+     */
+    public function show($id);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc ajax获取文章数据
+     * @return mixed
+     */
+    public function ajaxIndex();
 }

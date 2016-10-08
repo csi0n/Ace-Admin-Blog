@@ -23,19 +23,27 @@ if (!function_exists('isDoubleArray')) {
         return false;
     }
 }
-if (!function_exists('array_order_by')){
-    function array_order_by(){
-        $args=func_get_args();
-        $data=array_shift($args);
-        foreach ($args as $n=>$field){
-            $tmp=array();
-            foreach ($data as $key=>$row){
-                $tmp[$key]=$row[$field];
-                $args[$n]=$tmp;
+if (!function_exists('array_order_by')) {
+    function array_order_by()
+    {
+        $args = func_get_args();
+        $data = array_shift($args);
+        foreach ($args as $n => $field) {
+            if (is_string($field)) {
+                $tmp = array();
+                foreach ($data as $key => $row)
+                    $tmp[$key] = $row[$field];
+                $args[$n] = $tmp;
             }
         }
-        $args[]=&$data;
-        call_user_func_array('array_multisort',$args);
+        $args[] = &$data;
+        call_user_func_array('array_multisort', $args);
         return array_pop($args);
+    }
+}
+if (!function_exists('is_debug')) {
+    function is_debug()
+    {
+        return config('app.debug');
     }
 }

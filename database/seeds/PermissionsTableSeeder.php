@@ -126,5 +126,60 @@ class PermissionsTableSeeder extends Seeder
         $permissions->slug = 'admin.users.edit';
         $permissions->description = '修改用户';
         $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客管理';
+        $permissions->slug='blog.systems.manage';
+        $permissions->description='博客管理';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客文章列表';
+        $permissions->slug='blog.article.list';
+        $permissions->description='博客文章列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='添加文章列表';
+        $permissions->slug='blog.article.create';
+        $permissions->description='添加文章列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='修改文章列表';
+        $permissions->slug='blog.article.edit';
+        $permissions->description='修改文章列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='删除文章列表';
+        $permissions->slug='blog.article.delete';
+        $permissions->description='删除文章列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客标签列表';
+        $permissions->slug='blog.tag.list';
+        $permissions->description='博客标签列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客标签添加';
+        $permissions->slug='blog.tag.create';
+        $permissions->description='博客标签添加';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客标签修改';
+        $permissions->slug='blog.tag.edit';
+        $permissions->description='博客标签修改';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客标签删除';
+        $permissions->slug='blog.tag.delete';
+        $permissions->description='博客标签删除';
+        $permissions->save();
+
     }
 }

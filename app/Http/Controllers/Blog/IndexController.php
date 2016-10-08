@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog;
 
+use App\Repositories\Blog\PaginationRepository;
 use App\Repositories\IBlog\IArticleRepository;
 use App\Repositories\IBlog\IIndexRepository;
 use Illuminate\Contracts\View\View;
@@ -31,6 +32,7 @@ class IndexController extends Controller
     public function index()
     {
         $articles = $this->iArticleRepository->GetArticlePaginate();
-        return view('blog.index.index', compact('articles'));
+        $pre = new PaginationRepository($articles);
+        return view('blog.index.index', compact('articles', 'pre'));
     }
 }

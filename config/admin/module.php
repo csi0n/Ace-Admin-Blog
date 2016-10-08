@@ -6,8 +6,11 @@
  * Time: 15:37
  */
 return [
-    'permissions'=>'admin.permission',
-    'menu'=>'admin.menu',
-    'role'=>'admin.role',
-    'user'=>'admin.user',
+    'permissions' => 'admin.permission',
+    'menu' => 'admin.menu',
+    'role' => 'admin.role',
+    'user' => 'admin.user',
+    'blog' => [
+        'article' => 'admin.blog.article',
+    ]
 ];

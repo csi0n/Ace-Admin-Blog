@@ -28,6 +28,6 @@ class MenusComposer extends BaseComposer
     }
 
     public function compose(View $view){
-        $view->with('menus',$this->menus->menus());
+        $view->with('blog_menus',$this->menus->menus());
     }
 }

@@ -25,13 +25,13 @@ class PaginationRepository extends BootstrapThreePresenter
         }
         return '';
     }
-    protected function getDisabledTextWrapper($text,$bool = true)
+
+    protected function getDisabledTextWrapper($text, $bool = true)
     {
         if ($bool) {
-            return '<li class="page-item disabled"><span>'.$text.'</span></li>';
+            return '<li class="page-item disabled"><span>' . $text . '</span></li>';
         }
-        $className = $text == 'Prev' ? 'previous':'next';
-        return '<li class="'.$className.'  disabled page-item"><span aria-label="'.$className.'"><span aria-hidden="true">'.$text.'</span></span></li>';
+        return '<li class="page-item disabled"><a class="page-link" href="javascript:;">' . $text . '</a></li>';
     }
 
     public function getPreviousButton($text = '&laquo;')
@@ -72,4 +72,16 @@ class PaginationRepository extends BootstrapThreePresenter
 
         return $this->getAvailablePageWrapper($url, $page, $rel);
     }
+
+    protected function getActivePageWrapper($text)
+    {
+        return '<li class="page-item active"><a class="page-link" href="javascript:;">' . $text . '</a></li>';
+    }
+
+    protected function getAvailablePageWrapper($url, $page, $rel = null)
+    {
+        $rel = is_null($rel) ? '' : ' rel="' . $rel . '"';
+        return '<li class="page-item"><a class="page-link" href="' . htmlentities($url) . '"' . $rel . '>' . $page . '</a></li>';
+    }
+
 }

@@ -7,7 +7,6 @@
                     <a href="#" class="dropdown-toggle">
                         <i class="icon-desktop"></i>
                         <span class="menu-text"> {{$v['name']}} </span>
-
                         <b class="arrow icon-angle-down"></b>
                     </a>
                     <ul class="submenu">

@@ -43,8 +43,8 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->
             <nav class="mdl-navigation">
-                @if(!empty($menus))
-                    @foreach($menus as $menu)
+                @if(!empty($blog_menus))
+                    @foreach($blog_menus as $menu)
                         <a class="mdl-navigation__link" href="{{$menu['url']}}">{{$menu['name']}}</a>
                     @endforeach
                 @endif
@@ -54,8 +54,8 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-            @if(!empty($menus))
-                @foreach($menus as $menu)
+            @if(!empty($blog_menus))
+                @foreach($blog_menus as $menu)
                     <a class="mdl-navigation__link" href="{{$menu['url']}}">{{$menu['name']}}</a>
                 @endforeach
             @endif

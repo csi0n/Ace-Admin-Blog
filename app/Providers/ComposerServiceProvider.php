@@ -14,10 +14,10 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(
-            'layouts.sidebar','App\Http\ViewComposers\MenusComposer',
-            'layouts.blog','App\Http\ViewComposers\Blog\MenusComposer'
-        );
+        $composers = config('viewcomposer');
+        foreach ($composers as $k => $v) {
+            View::composer($k, $v);
+        }
     }
 
     /**

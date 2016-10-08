@@ -20,7 +20,7 @@ return [
         'name' => '用户名',
         'username' => '用户名',
         'password' => '密码',
-        'role'=>'权限',
+        'role' => '权限',
         'email' => '电子邮箱',
         'status' => '状态',
         'created_at' => '创建时间',
@@ -70,6 +70,20 @@ return [
         'status' => '状态',
         'created_at' => '创建时间',
         'updated_at' => '更新时间',
-        'add'=>'添加菜单',
+        'add' => '添加菜单',
     ],
+    'blog' => [
+        'article' => [
+            'blogManage' => '博客管理',
+            'articleManage' => '文章管理',
+            'list'=>'文章列表',
+            'thumb' => '缩略图',
+            'title' => '标题',
+            'user_id' => '用户UID',
+            'content' => '内容',
+            'sort' => '排序',
+            'created_at' => '创建时间',
+            'updated_at' => '更新时间',
+        ]
+    ]
 ];

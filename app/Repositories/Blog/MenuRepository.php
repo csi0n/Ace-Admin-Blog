@@ -23,16 +23,19 @@ class MenuRepository extends BaseBlogRepository implements IMenuRepository
      */
     public function menus()
     {
-        if (Cache::has(config('blog.global.cache.menu')))
-            return Cache::get(config('blog.global.cache.menu'));
+        if (is_debug()) {
+            if (Cache::has(config('blog.global.cache.menu')))
+                return Cache::get(config('blog.global.cache.menu'));
+        }
         return $this->setMenusCache();
     }
 
 
-    private function setMenusCache(){
-        $menus=Menu::all();
-        $menus->isEmpty()?$menus=[]:$menus->toArray();
-        array_order_by($menus,'sort',SORT_DESC);
+    private function setMenusCache()
+    {
+        $menus = Menu::all();
+        $menus->isEmpty() ? $menus = [] : $menus=$menus->toArray();
+        array_order_by($menus, 'sort', SORT_DESC);
         Cache::forever(config('blog.global.cache.menu'), $menus);
         return $menus;
     }

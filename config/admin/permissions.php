@@ -93,4 +93,50 @@ return [
             'except' => [],
         ],
     ],
+    'blog' => [
+        'article' => [
+            'list' => [
+                'name' => 'blog.article.list',
+                'only' => ['index', 'ajaxIndex'],
+                'except' => [],
+            ],
+            'create' => [
+                'name' => 'blog.article.create',
+                'only' => ['create', 'store'],
+                'except' => [],
+            ],
+            'edit' => [
+                'name' => 'blog.article.edit',
+                'only' => ['edit', 'update'],
+                'except' => [],
+            ],
+            'delete' => [
+                'name' => 'blog.article.delete',
+                'only' => ['destroy'],
+                'except' => [],
+            ],
+        ],
+        'tag' => [
+            'list' => [
+                'name' => 'blog.tag.list',
+                'only' => ['index', 'ajaxIndex'],
+                'except' => [],
+            ],
+            'create' => [
+                'name' => 'blog.tag.create',
+                'only' => ['create', 'store'],
+                'except' => [],
+            ],
+            'edit' => [
+                'name' => 'blog.tag.edit',
+                'only' => ['edit', 'update'],
+                'except' => [],
+            ],
+            'delete' => [
+                'name' => 'blog.tag.delete',
+                'only' => ['destroy'],
+                'except' => [],
+            ],
+        ]
+    ]
 ];

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Blog;
+namespace App\Http\Controllers\Admin\Blog;
 
+use App\Http\Controllers\Admin\Ext\BaseController;
 use App\Repositories\IBlog\IArticleRepository;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ArticleController extends Controller
+class ArticleController extends BaseController
 {
     protected $iArticleRepository;
 
@@ -19,12 +19,15 @@ class ArticleController extends Controller
      */
     public function __construct(IArticleRepository $iArticleRepository)
     {
+        $this->_key = 'blog.article';
+        parent::__construct();
         $this->iArticleRepository = $iArticleRepository;
     }
 
-    public function show($id)
+    public function index()
     {
-        $article = $this->iArticleRepository->show($id);
-        return view('blog.article.show',compact('article'));
+        return view('admin.blog.article.list');
+    }
+    public function ajaxIndex(){
     }
 }
