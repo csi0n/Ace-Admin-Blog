@@ -25,7 +25,7 @@
                 </h3>
                 <div class="table-responsive">
                     <div id="sample-table-2_wrapper" class="dataTables_wrapper" role="grid">
-                        <table id="permission" class="table table-striped table-bordered table-hover dataTable" aria-describedby="sample-table-2_info">
+                        <table id="article" class="table table-striped table-bordered table-hover dataTable" aria-describedby="sample-table-2_info">
                             <thead>
                             <tr role="row">
                                 <th class="center sorting_disabled" style="width: 56px;">
@@ -35,25 +35,19 @@
                                     </label>
                                 </th>
                                 <th class="sorting" style="width: 162px;">
-                                    {{trans('labels.permission.name')}}
+                                    {{trans('labels.blog.article.title')}}
                                 </th>
                                 <th class="sorting" style="width: 162px;">
-                                    {{trans('labels.permission.slug')}}
-                                </th>
-                                <th class="sorting"  style="width: 112px;">
-                                    {{trans('labels.role.description')}}
-                                </th>
-                                <th class="hidden-480 sorting" style="width: 121px;">
-                                    {{trans('labels.role.status')}}
+                                    {{trans('labels.blog.article.sort')}}
                                 </th>
                                 <th class="sorting" style="width: 179px;">
-                                    {{trans('labels.user.created_at')}}
+                                    {{trans('labels.blog.article.created_at')}}
                                 </th>
                                 <th class="hidden-480 sorting" style="width: 156px;">
-                                    {{trans('labels.user.updated_at')}}
+                                    {{trans('labels.blog.article.updated_at')}}
                                 </th>
                                 <th class="sorting_disabled"  style="width: 155px;">
-                                    {{trans('labels.user.action')}}
+                                    {{trans('labels.blog.article.action')}}
                                 </th>
                             </tr>
                             </thead>
@@ -85,7 +79,7 @@
 @endsection
 
 @section('js')
-    <script  src="{{asset('backend/admin/permission/dataTables.js')}}" type="text/javascript"></script>
+    <script  src="{{asset('backend/admin/blog/article/dataTables.js')}}" type="text/javascript"></script>
     <script src="{{asset('backend/plugin/js/jquery-ui-1.10.3.full.min.js')}}"></script>
     <script src="{{asset('backend/plugin/js/jquery.ui.touch-punch.min.js')}}"></script>
     {{--destroy--}}

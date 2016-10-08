@@ -19,9 +19,9 @@
 
             </article><!-- #post-## -->
         </div><!-- .mdl-cell -->
-        <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-card">
-        <div>
-            @if(!empty($article->tags))
+            @if(!$article->tags->isEmpty())
+            <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-card">
+                <div>
                 @foreach($article->tags as $tag)
                     <!-- Contact Chip -->
                         <span class="mdl-chip mdl-chip--contact">
@@ -29,9 +29,10 @@
                         <span class="mdl-chip__text">{{$tag->name}}</span>
                         </span>
                 @endforeach
-            @endif
-        </div>
+                </div>
             </div>
+            @endif
+
         <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-card">
             <h3><span>{{$article->title}}</span></h3>
             <!-- 多说评论框 start -->

@@ -45,5 +45,14 @@ return [
         'sure' => '是否确认操作?',
         'submit' => '确认',
         'cancel' => '取消',
+    ],
+    'blog'=>[
+        'article'=>[
+            'notFind'=>'没有找到文章',
+            'addFailed'=>'添加文章失败',
+            'addSuccess'=>'添加文章成功',
+            'updateSuccess'=>'更新文章成功',
+            'updateFailed'=>'更新文章失败',
+        ]
     ]
 ];

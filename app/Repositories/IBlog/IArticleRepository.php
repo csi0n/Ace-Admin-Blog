@@ -35,4 +35,11 @@ interface IArticleRepository extends IBaseRepository
      * @return mixed
      */
     public function ajaxIndex();
+
+    /**
+     * @Describe Post创建文章
+     * @param $request
+     * @return mixed
+     */
+    public function store($request);
 }

@@ -74,6 +74,7 @@ return [
     ],
     'blog' => [
         'article' => [
+            'id'=>'文章ID',
             'blogManage' => '博客管理',
             'articleManage' => '文章管理',
             'list'=>'文章列表',
@@ -84,6 +85,7 @@ return [
             'sort' => '排序',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
+            'action'=>'操作',
         ]
     ]
 ];

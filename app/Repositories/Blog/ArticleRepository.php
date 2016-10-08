@@ -12,6 +12,7 @@ namespace App\Repositories\Blog;
 use App\Models\Blog\Article;
 use App\Repositories\Blog\Ext\BaseBlogRepository;
 use App\Repositories\IBlog\IArticleRepository;
+use Laracasts\Flash\Flash;
 
 class ArticleRepository extends BaseBlogRepository implements IArticleRepository
 {
@@ -85,5 +86,25 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
             "aaData" => $article,
         ];
         return $returnData;
+    }
+
+    /**
+     * @Describe Post创建文章
+     * @param $request
+     * @return mixed
+     */
+    public function store($request)
+    {
+        dd($request->all());
+        $article=new Article;
+        if ($article->fill($request->all())->save()){
+            if ($request->tags){
+                $article->tags()->sync($request->tags);
+            }
+            Flash::success(trans('alerts.blog.article.addSuccess'));
+            return true;
+        }
+        Flash::error(trans('alerts.blog.article.addFailed'));
+        return false;
     }
 }
