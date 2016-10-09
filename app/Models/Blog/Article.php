@@ -9,6 +9,8 @@ class Article extends BaseModel
 {
     use ActionButton;
 
+    public $fillable = ['title', 'content', 'sort', 'user_id','cate_id'];
+
     /**
      * Article constructor.
      */
@@ -27,5 +29,10 @@ class Article extends BaseModel
     public function tags()
     {
         return $this->belongsToMany('App\Models\Blog\Tag', 'article_tags', 'article_id', 'tag_id')->withTimestamps();
+    }
+
+    public function cate()
+    {
+        return $this->hasOne('App\Models\Blog\Cate', 'id', 'cate_id');
     }
 }

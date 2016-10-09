@@ -3,7 +3,7 @@
  * Created by csi0n
  * User: huaqing.chen
  * Date: 9/30/16
- * Time: 13:57
+ * Time: 20:57
  */
 
 namespace App\Repositories\IBlog;
@@ -11,40 +11,27 @@ namespace App\Repositories\IBlog;
 
 use App\Repositories\IBlog\Ext\IBaseRepository;
 
-interface IArticleRepository extends IBaseRepository
+interface ICateRepository extends IBaseRepository
 {
     /**
-     * @Describe  分页显示文章
-     * @return mixed
-     */
-    public function GetArticlePaginate();
-
-    /**
-     * Created by huaqing.chen.
-     * Email huaqing.chen@bioon.com
-     * Desc 显示文章详情
-     * @param $id
-     * @return mixed
-     */
-    public function show($id);
-
-    /**
-     * Created by huaqing.chen.
-     * Email huaqing.chen@bioon.com
-     * Desc ajax获取文章数据
+     * @Describe ajax获取标签列表
      * @return mixed
      */
     public function ajaxIndex();
 
     /**
-     * @Describe Post创建文章
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc POST提交保存标签
      * @param $request
      * @return mixed
      */
     public function store($request);
 
     /**
-     * @Describe 编辑文章
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 编辑标签
      * @param $id
      * @return mixed
      */
@@ -53,7 +40,7 @@ interface IArticleRepository extends IBaseRepository
     /**
      * Created by huaqing.chen.
      * Email huaqing.chen@bioon.com
-     * Desc 提交编辑文章
+     * Desc post提交编辑标签
      * @param $request
      * @param $id
      * @return mixed
@@ -63,9 +50,11 @@ interface IArticleRepository extends IBaseRepository
     /**
      * Created by huaqing.chen.
      * Email huaqing.chen@bioon.com
-     * Desc 删除文章
+     * Desc 删除
      * @param $id
      * @return mixed
      */
-    public function destroy($id);
+     public function destroy($id);
+
+    public function GetAllCateArr();
 }

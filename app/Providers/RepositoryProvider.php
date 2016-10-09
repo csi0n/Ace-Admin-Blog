@@ -7,6 +7,7 @@ use App\Repositories\Admin\PermissionRepository;
 use App\Repositories\Admin\RoleRepository;
 use App\Repositories\Admin\UserRepository;
 use App\Repositories\Blog\ArticleRepository;
+use App\Repositories\Blog\CateRepository;
 use App\Repositories\Blog\IndexRepository;
 use App\Repositories\Blog\TagRepository;
 use App\Repositories\IAdmin\IMenuRepository;
@@ -14,6 +15,7 @@ use App\Repositories\IAdmin\IPermissionRepository;
 use App\Repositories\IAdmin\IRoleRepository;
 use App\Repositories\IAdmin\IUserRepository;
 use App\Repositories\IBlog\IArticleRepository;
+use App\Repositories\IBlog\ICateRepository;
 use App\Repositories\IBlog\IIndexRepository;
 use App\Repositories\IBlog\ITagRepository;
 use Illuminate\Support\ServiceProvider;
@@ -45,7 +47,8 @@ class RepositoryProvider extends ServiceProvider
 
         $this->app->bind(IIndexRepository::class, IndexRepository::class);
         $this->app->bind(IArticleRepository::class, ArticleRepository::class);
-        $this->app->bind(\App\Repositories\IBlog\IMenuRepository::class,\App\Repositories\Blog\MenuRepository::class);
-        $this->app->bind(ITagRepository::class,TagRepository::class);
+        $this->app->bind(\App\Repositories\IBlog\IMenuRepository::class, \App\Repositories\Blog\MenuRepository::class);
+        $this->app->bind(ITagRepository::class, TagRepository::class);
+        $this->app->bind(ICateRepository::class, CateRepository::class);
     }
 }

@@ -47,3 +47,39 @@ if (!function_exists('is_debug')) {
         return config('app.debug');
     }
 }
+if (!function_exists('upload')) {
+    function upload($file, $saveFolder)
+    {
+        $allowedExtensions = [
+            'jpg', 'jpeg', 'png',
+        ];
+        $extension = $file->getClientOriginalExtension();
+        /*判断后缀是否合法*/
+        if (in_array($extension, $allowedExtensions)) {
+            $image = Image::make($file);
+            /*保存图片*/
+            $upload_path = 'resource/' . $saveFolder . '/' . date('Y-m-d') . '/';
+            $mysql_save_path = $saveFolder . '/' . date('Y-m-d') . '/';
+            $path = storage_path($upload_path);
+            if (!is_dir($path)) {
+                mkdir($path, 0766, true);
+            }
+            $filename = uniqid() . time() . '.' . $extension;
+            $image->save($path . $filename);
+            $returnData = [
+                'result' => true,
+                'msg' => '上传成功',
+                'local' => $mysql_save_path . $filename,
+                'extension' => $extension,
+            ];
+        } else {
+            $returnData = [
+                'result' => false,
+                'msg' => '上传图片格式不正确',
+            ];
+        }
+        return $returnData;
+    }
+
+
+}

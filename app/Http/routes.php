@@ -35,7 +35,8 @@ Route::group(['middleware' => ['web']], function () {
         require __DIR__ . '/Routes/Admin/MenusRoute.php';
         Route::group(['prefix' => 'blog', 'namespace' => 'Blog'], function ($router) {
             require __DIR__ . '/Routes/Admin/Blog/ArticleRoute.php';
-            require __DIR__.'/Routes/Admin/Blog/TagRoute.php';
+            require __DIR__ . '/Routes/Admin/Blog/TagRoute.php';
+            require __DIR__ . '/Routes/Admin/Blog/CateRoute.php';
         });
     });
 });

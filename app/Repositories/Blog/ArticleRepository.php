@@ -13,9 +13,12 @@ use App\Models\Blog\Article;
 use App\Repositories\Blog\Ext\BaseBlogRepository;
 use App\Repositories\IBlog\IArticleRepository;
 use Laracasts\Flash\Flash;
+use Image;
+use Gate;
 
 class ArticleRepository extends BaseBlogRepository implements IArticleRepository
 {
+
     public function GetArticlePaginate()
     {
         $articles = Article::with(['user'])->paginate(5);
@@ -36,7 +39,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
 
     protected function verifyArticle($id)
     {
-        $article = Article::with(['user','tags'])->find($id);
+        $article = Article::with(['user', 'tags', 'cate'])->find($id);
         if (is_null($article))
             abort(404);
         return $article;
@@ -95,10 +98,11 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
      */
     public function store($request)
     {
-        dd($request->all());
-        $article=new Article;
-        if ($article->fill($request->all())->save()){
-            if ($request->tags){
+        $article = new Article;
+        $article->fill($request->all());
+        $article = $this->saveThumbRetArt($request, $article);
+        if ($article->save()) {
+            if ($request->tags) {
                 $article->tags()->sync($request->tags);
             }
             Flash::success(trans('alerts.blog.article.addSuccess'));
@@ -115,11 +119,49 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
      */
     public function edit($id)
     {
-       return $this->verifyArticle($id);
+        return $this->verifyArticle($id);
     }
 
     public function update($request, $id)
     {
-        // TODO: Implement update() method.
+        $article = $this->verifyArticle($id);
+        $article = $this->saveThumbRetArt($request, $article);
+        if ($article->fill($request->all())->save()) {
+            if ($request->tags) {
+                $article->tags()->sync($request->tags);
+            }
+            Flash::success(trans('alerts.blog.article.updateSuccess'));
+            return true;
+        }
+        Flash::error(trans('alerts.blog.article.updateFailed'));
+        return false;
+    }
+
+    private function saveThumbRetArt($request, $article)
+    {
+        if ($request->hasFile('thumb')) {
+            $upload = upload($request->file('thumb'), 'article');
+            if ($upload['result'])
+                $article->thumb = $upload['local'];
+        }
+        return $article;
+    }
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 删除文章
+     * @param $id
+     * @return mixed
+     */
+    public function destroy($id)
+    {
+        $ret = $this->verifyArticle($id);
+        if ($ret->delete()) {
+            Flash::success(trans('alerts.blog.article.deleteSuccess'));
+            return true;
+        }
+        Flash::error(trans('alerts.blog.article.deleteFailed'));
+        return false;
     }
 }

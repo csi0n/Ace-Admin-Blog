@@ -18,5 +18,49 @@ interface ITagRepository extends IBaseRepository
      * @return mixed
      */
     public function ajaxIndex();
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc POST提交保存标签
+     * @param $request
+     * @return mixed
+     */
     public function store($request);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 编辑标签
+     * @param $id
+     * @return mixed
+     */
+    public function edit($id);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc post提交编辑标签
+     * @param $request
+     * @param $id
+     * @return mixed
+     */
+    public function update($request, $id);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 删除
+     * @param $id
+     * @return mixed
+     */
+     public function destroy($id);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 获取标签数组
+     * @return mixed
+     */
+    public function GetTagsArray();
 }

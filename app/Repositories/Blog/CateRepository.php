@@ -1,10 +1,9 @@
 <?php
 namespace App\Repositories\Blog;
 
-use App\Models\Blog\Tag;
+use App\Models\Blog\Cate;
 use App\Repositories\Blog\Ext\BaseBlogRepository;
-use App\Repositories\IBlog\IIndexRepository;
-use App\Repositories\IBlog\ITagRepository;
+use App\Repositories\IBlog\ICateRepository;
 use Laracasts\Flash\Flash;
 
 /**
@@ -13,7 +12,7 @@ use Laracasts\Flash\Flash;
  * Date: 9/30/16
  * Time: 20:33
  */
-class TagRepository extends BaseBlogRepository implements ITagRepository
+class CateRepository extends BaseBlogRepository implements ICateRepository
 {
 
     /**
@@ -31,42 +30,41 @@ class TagRepository extends BaseBlogRepository implements ITagRepository
         /*搜索内容*/
         $search = request('sSearch', '');
         $sort = request('sSortDir_0', '');
-        $tag = new Tag;
+        $cate = new Cate;
         if ($search) {
-            $tag = $tag->where('name', 'like', "%{$search}%");
+            $cate = $cate->where('name', 'like', "%{$search}%");
         }
-        $tempTag = $tag;
-        $count = $tempTag->count();
+        $tempCate = $cate;
+        $count = $tempCate->count();
         if ($sort) {
             $orderName = request('mDataProp_' . request('iSortCol_0', ''), '');
-            $tag = $tag->orderBy($orderName, $sort);
+            $cate = $cate->orderBy($orderName, $sort);
         }
-        $tag = $tag->offset($start)
+        $cate = $cate->offset($start)
             ->limit($length)
             ->get();
 
-        foreach ($tag as $v) {
+        foreach ($cate as $v) {
             $v['actionButton'] = $v->GetActionButton();
         }
-        $tag->isEmpty() ? $tag = [] : $tag = $tag->toArray();
+        $cate->isEmpty() ? $cate = [] : $cate = $cate->toArray();
         /*返回数据*/
         $returnData = [
             "sEcho" => $draw,
             "iTotalRecords" => $count,
             "iTotalDisplayRecords" => $count,
-            "aaData" => $tag,
+            "aaData" => $cate,
         ];
         return $returnData;
     }
 
     public function store($request)
     {
-        $tag = new Tag;
-        if ($tag->fill($request->all())->save()) {
-            Flash::success(trans('alerts.blog.tag.addSuccess'));
+        if ((new Cate())->fill($request->all())->save()) {
+            Flash::success(trans('alerts.blog.cate.addSuccess'));
             return true;
         }
-        Flash::error(trans('alerts.blog.tag.addFailed'));
+        Flash::error(trans('alerts.blog.cate.addFailed'));
         return false;
     }
 
@@ -79,7 +77,7 @@ class TagRepository extends BaseBlogRepository implements ITagRepository
      */
     public function edit($id)
     {
-        return $this->verifyTag($id);
+        return $this->verifyCate($id);
     }
 
     /**
@@ -92,25 +90,25 @@ class TagRepository extends BaseBlogRepository implements ITagRepository
      */
     public function update($request, $id)
     {
-        $tag = $this->verifyTag($id);
-        if (!empty($tag)) {
-            if ($tag->fill($request->all())->save()) {
-                Flash::success(trans('alerts.blog.tag.updateSuccess'));
+        $cate = $this->verifyCate($id);
+        if (!empty($cate)) {
+            if ($cate->fill($request->all())->save()) {
+                Flash::success(trans('alerts.blog.cate.updateSuccess'));
                 return true;
             }
         }
-        Flash::error(trans('alerts.blog.tag.updateFailed'));
+        Flash::error(trans('alerts.blog.cate.updateFailed'));
         return false;
     }
 
-    protected function verifyTag($id)
+    protected function verifyCate($id)
     {
-        $tag = Tag::find($id);
-        if (empty($tag)) {
-            Flash::error(trans('alerts.blog.tag.notFind'));
+        $cate = Cate::find($id);
+        if (empty($cate)) {
+            Flash::error(trans('alerts.blog.cate.notFind'));
             return false;
         }
-        return $tag;
+        return $cate;
     }
 
     /**
@@ -122,21 +120,22 @@ class TagRepository extends BaseBlogRepository implements ITagRepository
      */
     public function destroy($id)
     {
-        $tag = $this->verifyTag($id);
-        if (!empty($tag)) {
-            if ($tag->delete()) {
-                Flash::success(trans('alerts.blog.tag.deleteSuccess'));
+        $cate = $this->verifyCate($id);
+        if (!empty($cate)) {
+            if ($cate->delete()) {
+                Flash::success(trans('alerts.blog.cate.deleteSuccess'));
                 return true;
             }
         }
-        Flash::error(trans('alerts.blog.tag.deletFailed'));
+        Flash::error(trans('alerts.blog.cate.deleteFailed'));
         return false;
     }
 
-    public function GetTagsArray()
+    public function GetAllCateArr()
     {
-        $tags = Tag::all();
-        if ($tags->isEmpty()) return [];
-        return $tags->toArray();
+        $cates = Cate::all();
+        if ($cates->isEmpty())
+            return [];
+        return $cates->toArray();
     }
 }

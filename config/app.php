@@ -159,6 +159,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         HieuLe\Active\ActiveServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
 
         /*
@@ -223,6 +224,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Active' => HieuLe\Active\Facades\Active::class,
         'Flash' => Laracasts\Flash\Flash::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
 
         'MenuRepository' => App\Facades\MenuFacade::class,

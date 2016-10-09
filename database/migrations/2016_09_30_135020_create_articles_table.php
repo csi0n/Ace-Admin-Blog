@@ -18,6 +18,8 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('cate_id')->unsigned()->index();
+            $table->foreign('cate_id')->references('id')->on('cates')->onDelete('cascade');
             $table->longText('content');
             $table->integer('sort')->default(0);
             $table->timestamps();

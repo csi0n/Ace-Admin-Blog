@@ -34,7 +34,7 @@ class BlogMenusSeeder extends Seeder
         $blog->language = "zh";
         $blog->icon = "fa fa-cog";
         $blog->slug = "blog.systems.manage";
-        $blog->url = "admin/blog/article*,admin/blog/tag*";
+        $blog->url = "admin/blog/article*,admin/blog/tag*,admin/blog/cate*";
         $blog->status=0;
         $blog->description = "博客管理";
         $blog->save();
@@ -59,6 +59,17 @@ class BlogMenusSeeder extends Seeder
         $article->url = "admin/blog/tag";
         $article->status=0;
         $article->description = "标签管理";
+        $article->save();
+
+        $article = new App\Models\Admin\Menu;
+        $article->name = "分类管理";
+        $article->pid = $blog->id;
+        $article->language = "zh";
+        $article->icon = "fa fa-cog";
+        $article->slug = "blog.cate.list";
+        $article->url = "admin/blog/cate";
+        $article->status=0;
+        $article->description = "分类管理";
         $article->save();
     }
 }

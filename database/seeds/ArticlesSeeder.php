@@ -12,11 +12,12 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        $article=new Article;
-        $article->thumb='';
-        $article->title='欢饮使用Blog';
-        $article->user_id=1;
-        $article->content='博客内容';
+        $article = new Article;
+        $article->thumb = '';
+        $article->title = '欢饮使用Blog';
+        $article->user_id = 1;
+        $article->cate_id = 1;
+        $article->content = '博客内容';
         $article->save();
     }
 }

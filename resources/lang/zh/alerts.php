@@ -7,7 +7,7 @@
  */
 return [
     'notice' => '提示',
-    'noPermissions'=>'没有权限',
+    'noPermissions' => '没有权限',
     'permission' => [
         'addSuccess' => '添加权限成功',
         'addFailed' => '添加权限失败',
@@ -46,18 +46,33 @@ return [
         'submit' => '确认',
         'cancel' => '取消',
     ],
-    'blog'=>[
-        'article'=>[
-            'notFind'=>'没有找到文章',
-            'addFailed'=>'添加文章失败',
-            'addSuccess'=>'添加文章成功',
-            'updateSuccess'=>'更新文章成功',
-            'updateFailed'=>'更新文章失败',
+    'blog' => [
+        'article' => [
+            'notFind' => '没有找到文章',
+            'addFailed' => '添加文章失败',
+            'addSuccess' => '添加文章成功',
+            'updateSuccess' => '更新文章成功',
+            'updateFailed' => '更新文章失败',
+            'deleteSuccess' => '删除文章成功',
+            'deleteFailed' => '删除文章失败',
         ],
-        'tag'=>[
-            'notFind'=>'没有找到标签',
-            'addFailed'=>'添加标签失败',
-            'addSuccess'=>'添加标签成功',
+        'tag' => [
+            'notFind' => '没有找到标签',
+            'addFailed' => '添加标签失败',
+            'addSuccess' => '添加标签成功',
+            'updateSuccess' => '更新标签成功',
+            'updateFailed' => '更新标签失败',
+            'deleteSuccess' => '删除标签成功',
+            'deleteFailed' => '删除标签失败',
+        ],
+        'cate'=>[
+            'notFind' => '没有找到分类',
+            'addFailed' => '添加分类失败',
+            'addSuccess' => '添加分类成功',
+            'updateSuccess' => '更新分类成功',
+            'updateFailed' => '更新分类失败',
+            'deleteSuccess' => '删除分类成功',
+            'deleteFailed' => '删除分类失败',
         ]
     ]
 ];

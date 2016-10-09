@@ -12,7 +12,8 @@
         "mews/captcha": "^2.1",
         "laravelcollective/html": "^5.2",
         "hieu-le/active": "^3.3",
-        "laracasts/flash": "^2.0"
+        "laracasts/flash": "^2.0",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

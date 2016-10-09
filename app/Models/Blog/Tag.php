@@ -10,6 +10,7 @@ class Tag extends BaseModel
 {
     use ActionButton;
 
+    public $fillable=['name'];
     /**
      * Tag constructor.
      */

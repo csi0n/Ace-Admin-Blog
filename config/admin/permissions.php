@@ -137,6 +137,28 @@ return [
                 'only' => ['destroy'],
                 'except' => [],
             ],
+        ],
+        'cate' => [
+            'list' => [
+                'name' => 'blog.cate.list',
+                'only' => ['index', 'ajaxIndex'],
+                'except' => [],
+            ],
+            'create' => [
+                'name' => 'blog.cate.create',
+                'only' => ['create', 'store'],
+                'except' => [],
+            ],
+            'edit' => [
+                'name' => 'blog.cate.edit',
+                'only' => ['edit', 'update'],
+                'except' => [],
+            ],
+            'delete' => [
+                'name' => 'blog.cate.delete',
+                'only' => ['destroy'],
+                'except' => [],
+            ],
         ]
     ]
 ];
