@@ -138,4 +138,13 @@ class CateRepository extends BaseBlogRepository implements ICateRepository
             return [];
         return $cates->toArray();
     }
+
+    public function GetAllCateWithArticleAndTag()
+    {
+        return Cate::with(
+            [
+                'articles.tags'
+            ]
+        )->get();
+    }
 }

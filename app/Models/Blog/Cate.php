@@ -21,5 +21,8 @@ class Cate extends Model
         $this->_module = config('admin.module.blog.cate');
     }
 
-
+    public function articles()
+    {
+        return $this->hasMany('App\Models\Blog\Article', 'cate_id', 'id');
+    }
 }

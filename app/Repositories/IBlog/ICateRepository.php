@@ -54,7 +54,9 @@ interface ICateRepository extends IBaseRepository
      * @param $id
      * @return mixed
      */
-     public function destroy($id);
+    public function destroy($id);
 
     public function GetAllCateArr();
+
+    public function GetAllCateWithArticleAndTag();
 }

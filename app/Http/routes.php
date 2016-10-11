@@ -40,3 +40,12 @@ Route::group(['middleware' => ['web']], function () {
         });
     });
 });
+
+/**
+ * Api路由
+ */
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function ($router) {
+    Route::group(['prefix' => 'blog', 'namespace' => 'Blog'], function ($router) {
+        require __DIR__ . '/Routes/Api/Blog/HomeRoute.php';
+    });
+});

@@ -80,6 +80,22 @@ if (!function_exists('upload')) {
         }
         return $returnData;
     }
-
-
+}
+if( !function_exists('null_to_empty') ){
+    function null_to_empty(&$arr)
+    {
+        foreach ($arr as $key => $value) {
+            if (is_array($value)) {
+                null_to_empty($arr[$key]);
+            } else {
+                $value = trim($value);
+                if (is_null($value)) {
+                    $arr[$key] = '';
+                } else{
+                    $arr[$key] = $value;
+                }
+            }
+        }
+        return $arr;
+    }
 }
