@@ -68,4 +68,13 @@ interface IArticleRepository extends IBaseRepository
      * @return mixed
      */
     public function destroy($id);
+
+    /**
+     * Created by huaqing.chen.
+     * Email huaqing.chen@bioon.com
+     * Desc 搜索文章
+     * @param $key
+     * @return mixed
+     */
+    public function search($request);
 }

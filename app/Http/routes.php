@@ -17,6 +17,7 @@ Route::group(['namespace' => 'Blog', 'middleware' => ['web']], function () {
     Route::resource('/', 'IndexController', ['only' => ['index']]);
 //    Route::get('/', 'IndexController@getIndex');
     Route::group(['prefix' => 'article'], function () {
+        Route::get('search', 'ArticleController@search');
 //        Route::get('{id}', 'ArticleController@getIndex')->name('article');
     });
     Route::resource('article', 'ArticleController');

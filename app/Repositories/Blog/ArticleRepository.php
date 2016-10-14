@@ -164,4 +164,11 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         Flash::error(trans('alerts.blog.article.deleteFailed'));
         return false;
     }
+
+    public function search($request)
+    {
+        $key = $request->get('key', '');
+        return Article::where('title', 'like',"%{$key}%")->with(['user'])
+            ->paginate(5);
+    }
 }

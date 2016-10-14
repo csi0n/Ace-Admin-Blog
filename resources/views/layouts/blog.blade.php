@@ -33,8 +33,9 @@
                     <i class="material-icons">search</i>
                 </label>
                 <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" name="sample"
-                           id="waterfall-exp">
+                    {!! Form::open(['url'=>url('article/search'),'method'=>'get']) !!}
+                    {!! Form::text('key',old('key'),['class'=>'mdl-textfield__input','id'=>'waterfall-exp']) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
