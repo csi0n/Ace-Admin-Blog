@@ -73,6 +73,14 @@ return [
             'updateFailed' => '更新分类失败',
             'deleteSuccess' => '删除分类成功',
             'deleteFailed' => '删除分类失败',
+        ],
+        'picture'=>[
+            'notFind'=>'没有找到图片',
+            'addFailed'=>'添加图片失败',
+            'addSuccess'=>'添加 图片成功',
+            'deleteSuccess'=>'删除图片成功',
+            'deleteFailed'=>'删除图片失败',
+            'copyUrlSuccess'=>'复制链接成功',
         ]
     ]
 ];

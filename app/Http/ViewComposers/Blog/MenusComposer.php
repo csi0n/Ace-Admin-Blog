@@ -10,24 +10,24 @@ namespace App\Http\ViewComposers\Blog;
 
 
 use App\Http\ViewComposers\Blog\Ext\BaseComposer;
-use App\Repositories\IBlog\IMenuRepository as IMenus;
+use App\Repositories\IBlog\ICateRepository as ICate;
 use Illuminate\View\View;
 
 class MenusComposer extends BaseComposer
 {
 
-    protected $menus;
+    protected $cate;
 
     /**
      * MenusComposer constructor.
-     * @param $menus
+     * @param ICate $cate
      */
-    public function __construct(IMenus $menus)
+    public function __construct(ICate $cate)
     {
-        $this->menus = $menus;
+        $this->cate = $cate;
     }
 
     public function compose(View $view){
-        $view->with('blog_menus',$this->menus->menus());
+        $view->with('blog_cates',$this->cate->cates());
     }
 }

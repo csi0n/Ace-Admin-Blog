@@ -103,3 +103,84 @@ article, aside, footer, header, hgroup, main, nav, section {
     margin-right: auto;
     text-align: center;
 }
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: .125rem;
+}
+
+.page-item {
+    display: inline;
+}
+
+.page-item:first-child .page-link, .page-item:last-child .page-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.page-item:first-child .page-link {
+    border-bottom-left-radius: 4em;
+    border-top-left-radius: 4em;
+}
+
+.page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
+    color: rgba(0,0,0,.26);
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: #ddd;
+}
+
+.page-item.active .page-link, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #009688;
+    border-color: #009688;
+}
+
+
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-bottom-left-radius: .125rem;
+    border-top-left-radius: .125rem;
+}
+
+.page-link {
+    min-width: 2.6em;
+    margin-right: .5em;
+    text-align: center;
+    border-radius: 4em;
+}
+
+.page-link{
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    color: #009688;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0 solid #ddd;
+}
+
+
+.page-item:first-child .page-link, .page-item:last-child .page-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+}

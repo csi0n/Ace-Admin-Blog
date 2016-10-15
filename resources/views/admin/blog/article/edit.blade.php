@@ -54,7 +54,7 @@
                                 <div class="widget-body">
                                     <div class="widget-main no-padding">
                                         <div class="md-editor active">
-                                            {!! Form::textarea('content',$article->content,['class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
+                                            {!! Form::textarea('content',$article->content,['id'=>'myEditor','class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
                                         </div>
                                     </div>
                                 </div>

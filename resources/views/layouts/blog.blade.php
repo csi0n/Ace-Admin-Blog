@@ -9,14 +9,12 @@
     <meta name="description" content="description">
     <meta name="robots" content="noindex,follow,noodp">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
-    <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
     <!-- Material Design fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Bootstrap Material Design -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+    <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
 <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
@@ -44,9 +42,9 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->
             <nav class="mdl-navigation">
-                @if(!empty($blog_menus))
-                    @foreach($blog_menus as $menu)
-                        <a class="mdl-navigation__link" href="{{$menu['url']}}">{{$menu['name']}}</a>
+                @if(!empty($blog_cates))
+                    @foreach($blog_cates as $cate)
+                        <a class="mdl-navigation__link" href="{{url('cate/'.$cate['id'])}}">{{$cate['name']}}</a>
                     @endforeach
                 @endif
             </nav>
@@ -55,9 +53,9 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-            @if(!empty($blog_menus))
-                @foreach($blog_menus as $menu)
-                    <a class="mdl-navigation__link" href="{{$menu['url']}}">{{$menu['name']}}</a>
+            @if(!empty($blog_cates))
+                @foreach($blog_cates as $cate)
+                    <a class="mdl-navigation__link" href="{{url('cate/'.$cate['id'])}}">{{$cate['name']}}</a>
                 @endforeach
             @endif
         </nav>
@@ -66,13 +64,6 @@
         @yield('content')
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="https://cdn.rawgit.com/HubSpot/tether/v1.3.4/dist/js/tether.min.js"></script>
-<script src="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.iife.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
-<script>
-    $('body').bootstrapMaterialDesign();
-</script>
+<script src="{{asset('blog/asset/jquery.js  ')}}"></script>
 </body>
 </html>

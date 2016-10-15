@@ -1,11 +1,12 @@
 <?php
 namespace App\Repositories\Blog;
 
+use App\Models\Blog\Article;
 use App\Models\Blog\Cate;
 use App\Repositories\Blog\Ext\BaseBlogRepository;
 use App\Repositories\IBlog\ICateRepository;
 use Laracasts\Flash\Flash;
-
+use Cache;
 /**
  * Created by csi0n
  * User: huaqing.chen
@@ -131,6 +132,23 @@ class CateRepository extends BaseBlogRepository implements ICateRepository
         return false;
     }
 
+    public function cates(){
+        if (!is_debug()) {
+            if (Cache::has(config('blog.global.cache.cates')))
+                return Cache::get(config('blog.global.cache.cates'));
+        }
+        return $this->setCatesCache();
+    }
+
+    private function setCatesCache()
+    {
+        $cates = Cate::all();
+        $cates->isEmpty() ? $cates = [] : $cates=$cates->toArray();
+        array_order_by($cates, 'sort', SORT_DESC);
+        Cache::forever(config('blog.global.cache.cates'), $cates);
+        return $cates;
+    }
+
     public function GetAllCateArr()
     {
         $cates = Cate::all();
@@ -146,5 +164,12 @@ class CateRepository extends BaseBlogRepository implements ICateRepository
                 'articles.tags'
             ]
         )->get();
+    }
+
+    public function show($id)
+    {
+        return Article::with('user')
+            ->where('cate_id',$id)
+            ->paginate(10);
     }
 }

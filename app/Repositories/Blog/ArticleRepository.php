@@ -15,7 +15,7 @@ use App\Repositories\IBlog\IArticleRepository;
 use Laracasts\Flash\Flash;
 use Image;
 use Gate;
-
+use EndaEditor;
 class ArticleRepository extends BaseBlogRepository implements IArticleRepository
 {
 
@@ -101,6 +101,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         $article = new Article;
         $article->fill($request->all());
         $article = $this->saveThumbRetArt($request, $article);
+        $article=$this->convertMarkDown($request,$article);
         if ($article->save()) {
             if ($request->tags) {
                 $article->tags()->sync($request->tags);
@@ -126,6 +127,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     {
         $article = $this->verifyArticle($id);
         $article = $this->saveThumbRetArt($request, $article);
+        $article=$this->convertMarkDown($request,$article);
         if ($article->fill($request->all())->save()) {
             if ($request->tags) {
                 $article->tags()->sync($request->tags);
@@ -144,6 +146,11 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
             if ($upload['result'])
                 $article->thumb = $upload['local'];
         }
+        return $article;
+    }
+
+    private function convertMarkDown($request,$article){
+        $article->content=EndaEditor::MarkDecode($request->content_md);
         return $article;
     }
 

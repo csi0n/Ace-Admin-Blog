@@ -21,6 +21,7 @@ Route::group(['namespace' => 'Blog', 'middleware' => ['web']], function () {
 //        Route::get('{id}', 'ArticleController@getIndex')->name('article');
     });
     Route::resource('article', 'ArticleController');
+    Route::resource('cate','CateController',['only'=>'show']);
 });
 /**
  * 后台路由
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['web']], function () {
             require __DIR__ . '/Routes/Admin/Blog/ArticleRoute.php';
             require __DIR__ . '/Routes/Admin/Blog/TagRoute.php';
             require __DIR__ . '/Routes/Admin/Blog/CateRoute.php';
+            require __DIR__.'/Routes/Admin/Blog/PictureRoute.php';
         });
     });
 });

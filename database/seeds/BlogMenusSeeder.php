@@ -12,21 +12,6 @@ class BlogMenusSeeder extends Seeder
      */
     public function run()
     {
-        $menu=new Menu;
-        $menu->name='标签1';
-        $menu->url='';
-        $menu->save();
-
-
-        $menu=new Menu;
-        $menu->name='标签2';
-        $menu->url='';
-        $menu->save();
-
-        $menu=new Menu;
-        $menu->name='标签3';
-        $menu->url='';
-        $menu->save();
 
         $blog = new App\Models\Admin\Menu;
         $blog->name = "博客管理";
@@ -34,7 +19,7 @@ class BlogMenusSeeder extends Seeder
         $blog->language = "zh";
         $blog->icon = "fa fa-cog";
         $blog->slug = "blog.systems.manage";
-        $blog->url = "admin/blog/article*,admin/blog/tag*,admin/blog/cate*";
+        $blog->url = "admin/blog/article*,admin/blog/tag*,admin/blog/cate*,admin/blog/picture*";
         $blog->status=0;
         $blog->description = "博客管理";
         $blog->save();
@@ -71,5 +56,17 @@ class BlogMenusSeeder extends Seeder
         $article->status=0;
         $article->description = "分类管理";
         $article->save();
+
+
+        $picture=new App\Models\Admin\Menu;
+        $picture->name="图片管理";
+        $picture->pid=$blog->id;
+        $picture->language = "zh";
+        $picture->icon = "fa fa-cog";
+        $picture->slug = "blog.picture.list";
+        $picture->url = "admin/blog/picture";
+        $picture->status=0;
+        $picture->description = "图片管理";
+        $picture->save();
     }
 }
