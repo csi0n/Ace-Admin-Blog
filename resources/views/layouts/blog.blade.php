@@ -62,8 +62,35 @@
     </div>
     <div class="mdl-layout__content ">
         @yield('content')
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">友链</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        {{--<li><a href="#">About</a></li>--}}
+                        {{--<li><a href="#">Terms</a></li>--}}
+                        {{--<li><a href="#">Partners</a></li>--}}
+                        {{--<li><a href="#">Updates</a></li>--}}
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+            <div class="mdl-mega-footer__bottom-section">
+                <ul class="mdl-mega-footer__link-list">
+                    {{--<li><a href="#">备案号:</a></li>--}}
+                </ul>
+            </div>
+
+        </footer>
     </div>
+
 </div>
+
 <script src="{{asset('blog/asset/jquery.js  ')}}"></script>
 </body>
 </html>

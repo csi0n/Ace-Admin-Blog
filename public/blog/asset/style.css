@@ -144,8 +144,8 @@ article, aside, footer, header, hgroup, main, nav, section {
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #009688;
-    border-color: #009688;
+    background-color: #004396;
+    border-color: #004396;
 }
 
 
@@ -167,7 +167,7 @@ article, aside, footer, header, hgroup, main, nav, section {
     float: left;
     padding: .5rem .75rem;
     margin-left: -1px;
-    color: #009688;
+    color: #004396;
     text-decoration: none;
     background-color: transparent;
     border: 0 solid #ddd;
