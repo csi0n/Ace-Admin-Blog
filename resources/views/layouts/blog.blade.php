@@ -8,12 +8,11 @@
     <!-- This site is optimized with the Yoast SEO plugin v3.1.2 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta name="description" content="description">
     <meta name="robots" content="noindex,follow,noodp">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
-    <link href="https://fonts.css.network/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
-    <!-- Material Design fonts -->
-    <link rel="stylesheet" href="https://fonts.css.network/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="https://fonts.css.network/icon?family=Material+Icons">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
