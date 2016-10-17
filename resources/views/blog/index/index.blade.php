@@ -4,7 +4,7 @@
         @foreach($articles as $article)
             <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp article" style="display: block;">
                 <article id="post-155" class="post-155 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-                    <div class="mdl-card__media" style="background-image: url('https://www.freejishu.com/wp-content/uploads/2016/08/110818_看图王.jpg');height:400px; ">
+                    <div class="mdl-card__media" style="background-image: url('{{asset('blog/asset/img/bg.jpg')}}');height:400px; ">
                         <header>
                             <h3>
                                 <a style="" href="{{route('article.show',['id'=>$article['id']])}}" rel="bookmark">{{$article['title']}}</a>

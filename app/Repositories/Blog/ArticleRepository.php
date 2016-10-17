@@ -15,10 +15,10 @@ use App\Repositories\IBlog\IArticleRepository;
 use Laracasts\Flash\Flash;
 use Image;
 use Gate;
+use Parsedown;
 
 class ArticleRepository extends BaseBlogRepository implements IArticleRepository
 {
-
     public function GetArticlePaginate()
     {
         $articles = Article::with(['user'])->paginate(5);
@@ -101,6 +101,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         $article = new Article;
         $article->fill($request->all());
         $article = $this->saveThumbRetArt($request, $article);
+        $article = $this->covertMarkDown($request, $article);
         if ($article->save()) {
             if ($request->tags) {
                 $article->tags()->sync($request->tags);
@@ -126,6 +127,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     {
         $article = $this->verifyArticle($id);
         $article = $this->saveThumbRetArt($request, $article);
+        $article = $this->covertMarkDown($request, $article);
         if ($article->fill($request->all())->save()) {
             if ($request->tags) {
                 $article->tags()->sync($request->tags);
@@ -144,6 +146,12 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
             if ($upload['result'])
                 $article->thumb = $upload['local'];
         }
+        return $article;
+    }
+
+    private function covertMarkDown($request, $article)
+    {
+        $article->content = (new Parsedown())->text($request->content_md);
         return $article;
     }
 
@@ -168,7 +176,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     public function search($request)
     {
         $key = $request->get('key', '');
-        return Article::where('title', 'like',"%{$key}%")->with(['user'])
+        return Article::where('title', 'like', "%{$key}%")->with(['user'])
             ->paginate(5);
     }
 }
