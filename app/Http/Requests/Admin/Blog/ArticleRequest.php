@@ -26,7 +26,7 @@ class ArticleRequest extends BaseRequest
         return [
             'id' => 'numeric',
             'title'=>'required',
-            'content'=>'required',
+            'cate_id'=>'required',
             'sort'=>'required|numeric',
         ];
     }
@@ -36,7 +36,7 @@ class ArticleRequest extends BaseRequest
         return [
             'id'            => trans('labels.blog.article.id'),
             'title'          => trans('labels.blog.article.title'),
-            'content'          => trans('labels.blog.article.content'),
+            'content_md'          => trans('labels.blog.article.content'),
             'sort'   => trans('labels.blog.article.sort'),
         ];
     }

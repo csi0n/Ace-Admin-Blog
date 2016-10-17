@@ -9,15 +9,15 @@
     <meta name="description" content="description">
     <meta name="robots" content="noindex,follow,noodp">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.css.network/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
     <!-- Material Design fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.css.network/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.css.network/icon?family=Material+Icons">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
-<div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--waterfall">
         <!-- Top row, always visible -->
         <div class="mdl-layout__header-row">
@@ -51,7 +51,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">Blog</span>
         <nav class="mdl-navigation">
             @if(!empty($blog_cates))
                 @foreach($blog_cates as $cate)
@@ -63,6 +63,7 @@
     <div class="mdl-layout__content ">
         @yield('content')
         <footer class="mdl-mega-footer">
+
             <div class="mdl-mega-footer__middle-section">
 
                 <div class="mdl-mega-footer__drop-down-section">

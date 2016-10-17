@@ -27,6 +27,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    {!! Form::label('cate_id',trans('labels.blog.article.cate_id'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
+                    <div class="col-sm-9">
+                        {!! Form::select('cate_id',$cates,null,['class'=>'col-xs-10 col-sm-5 chosen-select','data-placeholder'=>trans('labels.blog.article.cate_id')]) !!}
+                    </div>
+                </div>
+                <div class="form-group">
                     {!! Form::label('tags',trans('labels.blog.article.tag'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                     <div class="col-sm-9">
                         {!! Form::select('tags[]',$tags,null,['class'=>'col-xs-10 col-sm-5 chosen-select tag-input-style','multiple'=>true,'data-placeholder'=>trans('labels.blog.article.tag')]) !!}
@@ -41,16 +47,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content',trans('labels.blog.article.content'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
+                    {!! Form::label('content_md',trans('labels.blog.article.content_md'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                     <div class="col-sm-9">
-                        {{--<div class="wysiwyg-editor" id="editor1" contenteditable="true"><div style="text-align: justify;"><br></div></div>--}}
-                        {{--<div class="hr hr-double dotted"></div>--}}
                         <div class="widget-box">
                             <div class="widget-header widget-header-small header-color-blue"></div>
                             <div class="widget-body">
                                 <div class="widget-main no-padding">
                                     <div class="md-editor active">
-                                        {!! Form::textarea('content',null,['class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
+                                        {!! Form::textarea('content_md',null,['class'=>'span12 md-input','data-provide'=>'markdown','rows'=>10,'style'=>'resize: none; display: block;']) !!}
                                     </div>
                                 </div>
                             </div>

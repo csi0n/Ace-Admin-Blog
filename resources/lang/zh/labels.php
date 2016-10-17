@@ -82,7 +82,7 @@ return [
             'thumb' => '缩略图',
             'title' => '标题',
             'user_id' => '用户UID',
-            'content' => '内容',
+            'content_md' => '内容',
             'sort' => '排序',
             'tag' => '标签',
             'created_at' => '创建时间',

@@ -170,6 +170,7 @@ class CateRepository extends BaseBlogRepository implements ICateRepository
     {
         return Article::with('user')
             ->where('cate_id',$id)
+            ->orderBy('sort','created_at','desc')
             ->paginate(10);
     }
 }
