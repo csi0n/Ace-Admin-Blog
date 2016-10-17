@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->integer('cate_id')->unsigned()->index();
             $table->foreign('cate_id')->references('id')->on('cates')->onDelete('cascade');
             $table->longText('content');
+            $table->longText('content_md');
             $table->integer('sort')->default(0);
             $table->timestamps();
         });

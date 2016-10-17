@@ -496,6 +496,7 @@
 <script src="{{asset('backend/plugin/js/ace.min.js')}}"></script>
 @yield('js')
 
+<script src="{{asset('backend/plugin/js/layer/layer.js')}}"></script>
 </body>
 </html>
 

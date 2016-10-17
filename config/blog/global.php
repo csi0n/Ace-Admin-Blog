@@ -1,6 +1,6 @@
 <?php
 return [
     'cache'=>[
-        'menus'=>'menusCache',
+        'cates'=>'catesCache',
     ]
 ];

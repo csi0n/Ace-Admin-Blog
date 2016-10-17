@@ -58,8 +58,10 @@ class MenuRepository extends BaseRepository implements IMenuRepository
 
     public function menus()
     {
-        if (Cache::has(config('admin.global.cache.menu')))
-            return Cache::get(config('admin.global.cache.menu'));
+        if (!is_debug()){
+            if (Cache::has(config('admin.global.cache.menus')))
+                return Cache::get(config('admin.global.cache.menus'));
+        }
         $menusList = $this->setMenuListCache();
         return $menusList;
     }

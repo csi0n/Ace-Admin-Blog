@@ -205,5 +205,33 @@ class PermissionsTableSeeder extends Seeder
         $permissions->description='博客分类删除';
         $permissions->save();
 
+
+
+
+
+        $permissions=new Permission;
+        $permissions->name='博客图片列表';
+        $permissions->slug='blog.picture.list';
+        $permissions->description='博客图片列表';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客图片添加';
+        $permissions->slug='blog.picture.create';
+        $permissions->description='博客图片添加';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客图片修改';
+        $permissions->slug='blog.picture.edit';
+        $permissions->description='博客图片修改';
+        $permissions->save();
+
+        $permissions=new Permission;
+        $permissions->name='博客图片删除';
+        $permissions->slug='blog.picture.delete';
+        $permissions->description='博客图片删除';
+        $permissions->save();
+
     }
 }

@@ -48,7 +48,7 @@ if (!function_exists('is_debug')) {
     }
 }
 if (!function_exists('upload')) {
-    function upload($file, $saveFolder)
+    function upload($file)
     {
         $allowedExtensions = [
             'jpg', 'jpeg', 'png',
@@ -58,8 +58,8 @@ if (!function_exists('upload')) {
         if (in_array($extension, $allowedExtensions)) {
             $image = Image::make($file);
             /*保存图片*/
-            $upload_path = 'resource/' . $saveFolder . '/' . date('Y-m-d') . '/';
-            $mysql_save_path = $saveFolder . '/' . date('Y-m-d') . '/';
+            $upload_path = 'resource/' . date('Y-m-d') . '/';
+            $mysql_save_path =   '/' . date('Y-m-d') . '/';
             $path = storage_path($upload_path);
             if (!is_dir($path)) {
                 mkdir($path, 0766, true);
@@ -97,5 +97,22 @@ if( !function_exists('null_to_empty') ){
             }
         }
         return $arr;
+    }
+}
+if (!function_exists('scan_Dir')){
+    function scan_Dir($dir){
+        $files = array();
+        if ( $handle = opendir($dir) ) {
+            while ( ($file = readdir($handle)) !== false ){
+                if ( $file != ".." && $file != "." ){
+                    if ( is_dir($dir . "/" . $file) )
+                        $files[$file] = scanDir($dir . "/" . $file);
+                    else
+                        $files[] = $file;
+                }
+            }
+            closedir($handle);
+            return $files;
+        }
     }
 }

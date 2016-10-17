@@ -14,5 +14,6 @@ return [
         'article' => 'admin.blog.article',
         'tag' => 'admin.blog.tag',
         'cate' => 'admin.blog.cate',
+        'picture'=>'admin.blog.picture',
     ]
 ];

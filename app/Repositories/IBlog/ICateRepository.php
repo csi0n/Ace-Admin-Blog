@@ -56,6 +56,10 @@ interface ICateRepository extends IBaseRepository
      */
     public function destroy($id);
 
+    public function cates();
+
+    public function show($id);
+
     public function GetAllCateArr();
 
     public function GetAllCateWithArticleAndTag();

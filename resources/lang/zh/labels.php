@@ -112,6 +112,11 @@ return [
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
             'action' => '操作',
+        ],
+        'picture'=>[
+            'blogManage'=>'博客管理',
+            'pictureManage'=>'图片管理',
+            'list'=>'图片列表'
         ]
     ]
 ];

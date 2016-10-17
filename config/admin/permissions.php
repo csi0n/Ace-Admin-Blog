@@ -159,6 +159,28 @@ return [
                 'only' => ['destroy'],
                 'except' => [],
             ],
+        ],
+        'picture'=>[
+            'list'=>[
+                'name'=>'blog.picture.list',
+                'only'=>['index','ajaxIndex'],
+                'except'=>[],
+            ],
+            'create'=>[
+                'name'=>'blog.picture.create',
+                'only'=>['create','store'],
+                'except'=>[],
+            ],
+            'edit' => [
+                'name' => 'blog.picture.edit',
+                'only' => ['edit', 'update'],
+                'except' => [],
+            ],
+            'delete' => [
+                'name' => 'blog.picture.delete',
+                'only' => ['destroy'],
+                'except' => [],
+            ],
         ]
     ]
 ];
