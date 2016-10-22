@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{asset('blog/asset/markdown.css')}}" type="text/css" media="all">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
@@ -25,8 +26,7 @@
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
-                <label class="mdl-button mdl-js-button mdl-button--icon"
-                       for="waterfall-exp">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
                     <i class="material-icons">search</i>
                 </label>
                 <div class="mdl-textfield__expandable-holder">
@@ -59,12 +59,18 @@
             @endif
         </nav>
     </div>
-    <div class="mdl-layout__content ">
-        @yield('content')
+
+
+
+    <div class="mdl-layout__content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--6-col">@yield('content')</div>
+            <div class="mdl-cell mdl-cell--3-col"></div>
+        </div>
+
         <footer class="mdl-mega-footer">
-
             <div class="mdl-mega-footer__middle-section">
-
                 <div class="mdl-mega-footer__drop-down-section">
                     <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                     <h1 class="mdl-mega-footer__heading">友链</h1>
@@ -75,22 +81,21 @@
                         {{--<li><a href="#">Updates</a></li>--}}
                     </ul>
                 </div>
-
-
-
             </div>
-
             <div class="mdl-mega-footer__bottom-section">
                 <ul class="mdl-mega-footer__link-list">
                     {{--<li><a href="#">备案号:</a></li>--}}
                 </ul>
             </div>
-
         </footer>
     </div>
 
-</div>
 
+
+</div>
 <script src="{{asset('blog/asset/jquery.js  ')}}"></script>
+
+
+
 </body>
 </html>
