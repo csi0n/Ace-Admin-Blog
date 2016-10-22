@@ -16,6 +16,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('thumb');
             $table->string('title');
+            $table->text('describe');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('cate_id')->unsigned()->index();
