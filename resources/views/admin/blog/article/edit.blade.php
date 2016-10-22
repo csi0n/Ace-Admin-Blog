@@ -26,6 +26,14 @@
                             {!! Form::text('title',$article->title,['class'=>'col-xs-10 col-sm-5','id'=>'title','placeholder'=>trans('labels.blog.article.title')]) !!}
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        {!! Form::label('describe',trans('labels.blog.article.describe'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
+                        <div class="col-sm-9">
+                            {!! Form::textarea('describe',$article->describe,['class'=>'col-xs-10 col-sm-5','id'=>'describe','placeholder'=>trans('labels.blog.article.describe')]) !!}
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         {!! Form::label('cate_id',trans('labels.blog.article.cate_id'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                         <div class="col-sm-9">

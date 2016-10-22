@@ -27,6 +27,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    {!! Form::label('describe',trans('labels.blog.article.describe'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
+                    <div class="col-sm-9">
+                        {!! Form::textarea('describe',old('describe'),['class'=>'col-xs-10 col-sm-5','id'=>'describe','placeholder'=>trans('labels.blog.article.describe')]) !!}
+                    </div>
+                </div>
+                <div class="form-group">
                     {!! Form::label('cate_id',trans('labels.blog.article.cate_id'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                     <div class="col-sm-9">
                         {!! Form::select('cate_id',$cates,null,['class'=>'col-xs-10 col-sm-5 chosen-select','data-placeholder'=>trans('labels.blog.article.cate_id')]) !!}

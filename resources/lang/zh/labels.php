@@ -79,6 +79,7 @@ return [
             'blogManage' => '博客管理',
             'articleManage' => '文章管理',
             'list' => '文章列表',
+            'describe' => '描述',
             'thumb' => '缩略图',
             'title' => '标题',
             'user_id' => '用户UID',
@@ -113,10 +114,10 @@ return [
             'updated_at' => '更新时间',
             'action' => '操作',
         ],
-        'picture'=>[
-            'blogManage'=>'博客管理',
-            'pictureManage'=>'图片管理',
-            'list'=>'图片列表'
+        'picture' => [
+            'blogManage' => '博客管理',
+            'pictureManage' => '图片管理',
+            'list' => '图片列表'
         ]
     ]
 ];
