@@ -27,7 +27,7 @@ class HomeController extends Controller
             if (!$cate->articles->isEmpty()){
                 $cate->articles->each(function ($article){
                     $article['content']=sprintf('<article class="markdown-body">%s</article>',$article['content']);
-                    $article['css']=config('blog.css.markdown');
+                    $article['css']=asset(config('blog.css.markdown'));
                 });
             }
         });
