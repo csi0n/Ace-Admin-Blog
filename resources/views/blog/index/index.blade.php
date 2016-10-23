@@ -11,7 +11,7 @@
                                     </h3>			</header><!-- .entry-header -->
                             </div>
                             <div class="entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-                                {!! $article['content'] !!}
+                                {!! $article['describe'] !!}
                             </div><!-- .entry-content -->
 
                             <footer class="entry-footer meta mdl-card__actions mdl-card--border">
