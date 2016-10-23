@@ -12,7 +12,6 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     protected $iCateRepository;
-
     /**
      * HomeController constructor.
      * @param $iCateRepository
@@ -24,6 +23,14 @@ class HomeController extends Controller
 
     public function index()
     {
-        return ApiResponseService::success($this->iCateRepository->GetAllCateWithArticleAndTag());
+        $result=$this->iCateRepository->GetAllCateWithArticleAndTag()->each(function ($cate){
+            if (!$cate->articles->isEmpty()){
+                $cate->articles->each(function ($article){
+                    $article['content']=sprintf('<article class="markdown-body">%s</article>',$article['content']);
+                    $article['css']=config('blog.css.markdown');
+                });
+            }
+        });
+        return ApiResponseService::success($result);
     }
 }

@@ -6,5 +6,8 @@
  * Time: 18:40
  */
 return [
-    'img_prefix'=>'http://img.blog.com/'
+    'img_prefix'=>'http://img.csi0n.com/',
+    'css'=>[
+        'markdown'=>asset('blog/asset/markdown.css'),
+    ]
 ];

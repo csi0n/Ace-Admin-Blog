@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('blog/asset/markdown.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{config('blog.css.markdown')}}" type="text/css" media="all">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
@@ -59,16 +59,12 @@
             @endif
         </nav>
     </div>
-
-
-
     <div class="mdl-layout__content">
         <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--3-col"></div>
-            <div class="mdl-cell mdl-cell--6-col">@yield('content')</div>
-            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--2-col"></div>
+            <div class="mdl-cell mdl-cell--8-col">@yield('content')</div>
+            <div class="mdl-cell mdl-cell--2-col"></div>
         </div>
-
         <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer__middle-section">
                 <div class="mdl-mega-footer__drop-down-section">
@@ -89,13 +85,7 @@
             </div>
         </footer>
     </div>
-
-
-
 </div>
 <script src="{{asset('blog/asset/jquery.js  ')}}"></script>
-
-
-
 </body>
 </html>

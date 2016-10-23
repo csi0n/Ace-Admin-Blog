@@ -13,7 +13,7 @@ use Response;
 
 class ApiResponseService
 {
-    public static function success($result = [], $message = 'success', $statusCode = 200, $header = [])
+    public static function success($result = [], $message = 'success',$statusCode = 200, $header = [])
     {
         if (is_array($result) or is_object($result) and !empty($result)) {
             if (is_object($result) and ($result instanceof Collection)) {
