@@ -4,16 +4,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog</title>
+    <title>{{config('blog.title')}}</title>
     <!-- This site is optimized with the Yoast SEO plugin v3.1.2 - https://yoast.com/wordpress/plugins/seo/ -->
-    <meta name="description" content="description">
-    <meta name="robots" content="noindex,follow,noodp">
+    <meta name="description" content="{{config('blog.describe')}}">
+    <meta name="robots" content="{{config('blog.describe')}}">
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{config('blog.css.markdown')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{asset(config('blog.css.markdown'))}}" type="text/css" media="all">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
 </head>
 <body>
