@@ -77,4 +77,5 @@ interface IArticleRepository extends IBaseRepository
      * @return mixed
      */
     public function search($request);
+    public function apiSearch($key);
 }

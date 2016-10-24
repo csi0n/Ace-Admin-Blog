@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Blog;
 
+use App\Models\Blog\Article;
 use App\Models\Blog\Tag;
 use App\Repositories\Blog\Ext\BaseBlogRepository;
 use App\Repositories\IBlog\IIndexRepository;
@@ -138,5 +139,14 @@ class TagRepository extends BaseBlogRepository implements ITagRepository
         $tags = Tag::all();
         if ($tags->isEmpty()) return [];
         return $tags->toArray();
+    }
+
+    public function show($id)
+    {
+        $article = Article::with(['tags'])
+                ->whereHas('tags', function ($query) use ($id) {
+            $query->where('tag_id', $id);
+        })->get();
+        return $article;
     }
 }

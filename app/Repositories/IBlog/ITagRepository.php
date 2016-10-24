@@ -13,6 +13,7 @@ use App\Repositories\IBlog\Ext\IBaseRepository;
 
 interface ITagRepository extends IBaseRepository
 {
+    public function show($id);
     /**
      * @Describe ajax获取标签列表
      * @return mixed

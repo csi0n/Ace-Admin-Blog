@@ -22,7 +22,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     public function GetArticlePaginate()
     {
         $articles = Article::with(['user'])
-            ->orderBy('sort','created_at','desc')
+            ->orderBy('sort', 'created_at', 'desc')
             ->paginate(5);
         return $articles;
     }
@@ -77,7 +77,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         }
         $article = $article->offset($start)
             ->limit($length)
-            ->orderBy('sort','desc')
+            ->orderBy('sort', 'desc')
             ->get();
 
         foreach ($article as $v) {
@@ -180,7 +180,14 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     {
         $key = $request->get('key', '');
         return Article::where('title', 'like', "%{$key}%")->with(['user'])
-            ->orderBy('sort','created_at','desc')
+            ->orderBy('sort', 'created_at', 'desc')
             ->paginate(5);
+    }
+
+    public function apiSearch($key)
+    {
+        return Article::where('title', 'like', "%{$key}%")->with(['tags'])
+            ->orderBy('sort', 'created_at', 'desc')
+            ->get();
     }
 }
