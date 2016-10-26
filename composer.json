@@ -14,7 +14,8 @@
         "hieu-le/active": "^3.3",
         "laracasts/flash": "^2.0",
         "intervention/image": "^2.3",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "jlapp/swaggervel": "master-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

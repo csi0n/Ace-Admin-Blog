@@ -160,6 +160,7 @@ return [
         HieuLe\Active\ActiveServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Jlapp\Swaggervel\SwaggervelServiceProvider::class,
 
 
         /*

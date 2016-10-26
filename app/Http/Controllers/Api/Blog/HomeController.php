@@ -21,6 +21,20 @@ class HomeController extends Controller
         $this->iCateRepository = $iCateRepository;
     }
 
+
+    /**
+     * @SWG\Get(
+     *     path="/api/blog/home",
+     *     summary="首页 ",
+     *     tags={"Blog:Home"},
+     *     description="首页",
+     *     operationId="home",
+     *     @SWG\Response(
+     *         response=200,
+     *         description="正常执行",
+     *     )
+     * )
+     */
     public function index()
     {
         $result=$this->iCateRepository->GetAllCateWithArticleAndTag()->each(function ($cate){

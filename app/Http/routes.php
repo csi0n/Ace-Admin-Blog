@@ -11,6 +11,28 @@
 |
 */
 /**
+ * @SWG\Swagger(
+ *     schemes={"http"},
+ *     host="blog.csi0n.com",
+ *     basePath="/",
+ *     @SWG\Info(
+ *         version="1.0.0",
+ *         title="ACenter",
+ *         description="API 用户中心",
+ *         termsOfService="http://blog.csi0n.cn",
+ *         @SWG\Contact(
+ *             email="841506740@qq.com",
+ *             name="csi0n"
+ *         ),
+ *         @SWG\License(
+ *             name="授权说明",
+ *             url="javascript:alert(/api/)"
+ *         )
+ *     )
+ *
+ * )
+ */
+/**
  * 前台路由
  */
 Route::group(['namespace' => 'Blog', 'middleware' => ['web']], function () {
