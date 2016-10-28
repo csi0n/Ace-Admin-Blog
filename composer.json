@@ -15,7 +15,8 @@
         "laracasts/flash": "^2.0",
         "intervention/image": "^2.3",
         "erusev/parsedown": "^1.6",
-        "jlapp/swaggervel": "master-dev"
+        "jlapp/swaggervel": "master-dev",
+        "curl/curl": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

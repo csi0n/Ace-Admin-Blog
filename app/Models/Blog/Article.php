@@ -9,7 +9,7 @@ class Article extends BaseModel
 {
     use ActionButton;
 
-    public $fillable = ['title', 'sort', 'user_id','cate_id','content_md'];
+    public $fillable = ['title', 'sort', 'user_id', 'cate_id', 'content_md'];
 
     /**
      * Article constructor.
@@ -34,5 +34,10 @@ class Article extends BaseModel
     public function cate()
     {
         return $this->hasOne('App\Models\Blog\Cate', 'id', 'cate_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Blog\Comments', 'id', 'thread_key');
     }
 }

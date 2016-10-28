@@ -44,6 +44,7 @@ Route::group(['namespace' => 'Blog', 'middleware' => ['web']], function () {
     });
     Route::resource('article', 'ArticleController');
     Route::resource('cate', 'CateController', ['only' => 'show']);
+    Route::any('sync', 'DuoShuoController@sync');
 });
 /**
  * 后台路由
@@ -74,5 +75,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function ($router) {
         require __DIR__ . '/Routes/Api/Blog/HomeRoute.php';
         require __DIR__ . '/Routes/Api/Blog/TagRoute.php';
         require __DIR__ . '/Routes/Api/Blog/ArticleRoute.php';
+        require __DIR__ . '/Routes/Api/Blog/CommentRoute.php';
     });
 });

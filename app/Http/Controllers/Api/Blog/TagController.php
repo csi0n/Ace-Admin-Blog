@@ -68,7 +68,7 @@ class TagController extends Controller
         $result=$this->iTagRepository->show($id);
         if (!$result->isEmpty()){
             $result->each(function ($article){
-                $article['css']=config('blog.css.markdown');
+                $article['css']=asset(config('blog.css.markdown'));
             });
         }
         return ApiResponseService::success($result);
