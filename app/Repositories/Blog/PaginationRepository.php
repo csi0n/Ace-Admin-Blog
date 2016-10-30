@@ -18,9 +18,9 @@ class PaginationRepository extends BootstrapThreePresenter
         if ($this->hasPages()) {
             return sprintf(
                 '<nav class="center mdl-color-text--grey-50 mdl-cell mdl-cell--12-col" role="navigation"><ul class="pagination">%s %s %s</ul></nav>',
-                $this->getPreviousButton('Prev'),
+                $this->getPreviousButton(trans('pagination.previous')),
                 $this->getLinks(),
-                $this->getNextButton('Next')
+                $this->getNextButton(trans('pagination.next'))
             );
         }
         return '';

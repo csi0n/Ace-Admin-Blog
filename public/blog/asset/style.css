@@ -131,8 +131,7 @@ article, aside, footer, header, main, nav, section {
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #004396;
-    border-color: #004396;
+    background-color: #3095F8;
 }
 
 
@@ -154,12 +153,15 @@ article, aside, footer, header, main, nav, section {
     float: left;
     padding: .5rem .75rem;
     margin-left: -1px;
-    color: #004396;
+    color: #607d8b;
     text-decoration: none;
     background-color: transparent;
     border: 0 solid #ddd;
 }
 
+.page-link:hover{
+    color: #00b0ff;
+}
 
 .page-item:first-child .page-link, .page-item:last-child .page-link {
     display: -webkit-box;
@@ -198,4 +200,7 @@ article, aside, footer, header, main, nav, section {
 }
 .md-70{
     font-size: 70px;
+}
+.mdl-layout__header{
+    background-color: #3095F8;
 }
