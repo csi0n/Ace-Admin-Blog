@@ -3,7 +3,9 @@
  */
 var customJs = function () {
     var a = function () {
-        $('.mdl-loading').hide();
+        setInterval(function () {
+            $('.mdl-loading').hide();
+        },3000);
     };
     return {
         init: a
