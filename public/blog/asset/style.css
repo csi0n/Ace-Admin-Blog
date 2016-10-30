@@ -171,3 +171,31 @@ article, aside, footer, header, main, nav, section {
     padding-right: 0;
     padding-left: 0;
 }
+
+.mdl-loading{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+.mdl-loading-spinner{
+    margin-bottom: 25%;
+    margin-top: 25%;
+    width: 90px;
+    height:90px;
+}
+.mdl-comments-title{
+    font-size: 18px;
+}
+.mdl-empty{
+    text-align: center;
+    min-height: 200px;
+}
+.md-70{
+    font-size: 70px;
+}

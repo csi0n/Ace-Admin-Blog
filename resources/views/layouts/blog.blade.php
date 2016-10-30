@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0022)http://mdlwp.com/demo/ -->
-<html lang="en-US"  class="mdl-js">
+<html lang="en-US" class="mdl-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,12 +11,18 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet"  href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{asset('blog/asset/material-design-lite/material.min.css')}}" type="text/css"
+          media="all">
     <link rel="stylesheet" href="{{asset('blog/asset/style.css')}}" type="text/css" media="all">
     <link rel="stylesheet" href="{{asset(config('blog.css.markdown'))}}" type="text/css" media="all">
     <script type="text/javascript" src="{{asset('blog/asset/material-design-lite/material.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('blog/asset/jquery/dist/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('blog/asset/custom.js')}}"></script>
 </head>
 <body>
+<div class="mdl-loading">
+    <div class="mdl-loading-spinner mdl-cell--middle mdl-spinner  mdl-js-spinner is-active"></div>
+</div>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--waterfall">
         <!-- Top row, always visible -->
@@ -58,11 +64,15 @@
                 @endforeach
             @endif
         </nav>
+
     </div>
+
     <div class="mdl-layout__content">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--2-col"></div>
-            <div class="mdl-cell mdl-cell--8-col">@yield('content')</div>
+            <div class="mdl-cell mdl-cell--8-col">
+                @yield('content')
+            </div>
             <div class="mdl-cell mdl-cell--2-col"></div>
         </div>
         <footer class="mdl-mega-footer">
@@ -80,12 +90,16 @@
             </div>
             <div class="mdl-mega-footer__bottom-section">
                 <ul class="mdl-mega-footer__link-list">
-                    {{--<li><a href="#">备案号:</a></li>--}}
+                    <li><a href="#">备案号:</a></li>
                 </ul>
             </div>
         </footer>
     </div>
 </div>
-<script src="{{asset('blog/asset/jquery.js  ')}}"></script>
 </body>
+<script type="text/javascript">
+    $(function () {
+        customJs().init();
+    });
+</script>
 </html>

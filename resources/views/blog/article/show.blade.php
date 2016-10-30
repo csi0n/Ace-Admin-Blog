@@ -37,7 +37,7 @@
             @endif
 
         <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-card">
-            <h3><span>{{$article->title}}</span></h3>
+            <h3><span class="mdl-comments-title">{{$article->title}}</span></h3>
             <!-- 多说评论框 start -->
             <div class="ds-thread" data-thread-key="{{$article->id}}" data-title="{{$article->title}}" data-url="{{route('article.show',['id'=>$article->id])}}}}"></div>
             <!-- 多说评论框 end -->
