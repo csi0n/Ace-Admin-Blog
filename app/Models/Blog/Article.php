@@ -9,7 +9,7 @@ class Article extends BaseModel
 {
     use ActionButton;
 
-    public $fillable = ['title', 'sort', 'user_id', 'cate_id', 'content_md'];
+    public $fillable = ['title', 'sort', 'user_id', 'cate_id', 'content_md','describe'];
 
     /**
      * Article constructor.

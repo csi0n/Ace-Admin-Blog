@@ -9,7 +9,7 @@
 namespace App\Repositories\Blog;
 
 
-use App\Models\Blog\Commont;
+use App\Models\Blog\Comment;
 use App\Repositories\IBlog\IDuoShuoRepository;
 use Curl\Curl;
 
@@ -44,7 +44,7 @@ class DuoShuoRepository implements IDuoShuoRepository
                     try {
                         \DB::beginTransaction();
                         if ($item['action'] != 'delete') {
-                            $common = new Commont();
+                            $common = new Comment();
                             $common->fill($item['meta']);
                             $common->saveOrFail();
                         }
