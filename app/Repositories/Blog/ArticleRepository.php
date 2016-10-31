@@ -23,7 +23,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
     {
         $articles = Article::with(['user'])
             ->orderBy('sort', 'created_at', 'desc')
-            ->paginate(5);
+            ->paginate(prePage());
         return $articles;
     }
 
@@ -181,7 +181,7 @@ class ArticleRepository extends BaseBlogRepository implements IArticleRepository
         $key = $request->get('key', '');
         return Article::where('title', 'like', "%{$key}%")->with(['user'])
             ->orderBy('sort', 'created_at', 'desc')
-            ->paginate(5);
+            ->paginate(prePage());
     }
 
     public function apiSearch($key)

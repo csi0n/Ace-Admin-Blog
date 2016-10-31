@@ -5,7 +5,10 @@ var customJs = function () {
     var a = function () {
         setInterval(function () {
             $('.mdl-loading').hide();
-        },3000);
+        },1000);
+        $('.mdl-scroll-top').click(function () {
+            $('.mdl-layout__content').animate({scrollTop:0}, 'slow');
+        });
     };
     return {
         init: a

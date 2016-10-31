@@ -59,7 +59,7 @@ if (!function_exists('upload')) {
             $image = Image::make($file);
             /*保存图片*/
             $upload_path = 'resource/' . date('Y-m-d') . '/';
-            $mysql_save_path =   '/' . date('Y-m-d') . '/';
+            $mysql_save_path = '/' . date('Y-m-d') . '/';
             $path = storage_path($upload_path);
             if (!is_dir($path)) {
                 mkdir($path, 0766, true);
@@ -81,7 +81,7 @@ if (!function_exists('upload')) {
         return $returnData;
     }
 }
-if( !function_exists('null_to_empty') ){
+if (!function_exists('null_to_empty')) {
     function null_to_empty(&$arr)
     {
         foreach ($arr as $key => $value) {
@@ -91,7 +91,7 @@ if( !function_exists('null_to_empty') ){
                 $value = trim($value);
                 if (is_null($value)) {
                     $arr[$key] = '';
-                } else{
+                } else {
                     $arr[$key] = $value;
                 }
             }
@@ -99,13 +99,14 @@ if( !function_exists('null_to_empty') ){
         return $arr;
     }
 }
-if (!function_exists('scan_Dir')){
-    function scan_Dir($dir){
+if (!function_exists('scan_Dir')) {
+    function scan_Dir($dir)
+    {
         $files = array();
-        if ( $handle = opendir($dir) ) {
-            while ( ($file = readdir($handle)) !== false ){
-                if ( $file != ".." && $file != "." ){
-                    if ( is_dir($dir . "/" . $file) )
+        if ($handle = opendir($dir)) {
+            while (($file = readdir($handle)) !== false) {
+                if ($file != ".." && $file != ".") {
+                    if (is_dir($dir . "/" . $file))
                         $files[$file] = scanDir($dir . "/" . $file);
                     else
                         $files[] = $file;
@@ -114,5 +115,11 @@ if (!function_exists('scan_Dir')){
             closedir($handle);
             return $files;
         }
+    }
+}
+if (!function_exists('prePage')) {
+    function prePage()
+    {
+        return config('blog.page');
     }
 }

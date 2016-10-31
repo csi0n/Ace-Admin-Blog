@@ -12,5 +12,6 @@ return [
     'css' => [
         'markdown' => 'blog/asset/markdown.css',
     ],
-    'sync_pwd' => 'chq5201314'
+    'sync_pwd' => 'chq5201314',
+    'page' => 10,
 ];

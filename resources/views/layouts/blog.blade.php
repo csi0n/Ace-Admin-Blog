@@ -23,6 +23,7 @@
 <div class="mdl-loading">
     <div class="mdl-loading-spinner mdl-cell--middle mdl-spinner  mdl-js-spinner is-active"></div>
 </div>
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--waterfall">
         <!-- Top row, always visible -->
@@ -75,6 +76,9 @@
             </div>
             <div class="mdl-cell mdl-cell--2-col"></div>
         </div>
+
+
+
         <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer__middle-section">
                 <div class="mdl-mega-footer__drop-down-section">
@@ -93,13 +97,22 @@
                     <li><a href="#">备案号:</a></li>
                 </ul>
             </div>
+
         </footer>
     </div>
+</div>
+
+<div class="mdl-right-bottom">
+    <!-- Colored FAB button with ripple -->
+    <button class="mdl-scroll-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">arrow_upward</i>
+    </button>
 </div>
 </body>
 <script type="text/javascript">
     $(function () {
         customJs().init();
     });
+
 </script>
 </html>
