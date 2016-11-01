@@ -123,3 +123,10 @@ if (!function_exists('prePage')) {
         return config('blog.page');
     }
 }
+if (!function_exists('endSegments')) {
+    function endSegments($position_from_end = 1)
+    {
+        $segments = request()->segments();
+        return $segments[sizeof($segments) - $position_from_end];
+    }
+}

@@ -14,7 +14,7 @@
             <div class="col-xs-12">
             @include('common.errors')
             <!-- PAGE CONTENT BEGINS -->
-                {!! Form::open(array('route'=>['admin.user.store'],'method'=>'post','class'=>'form-horizontal','role'=>'form')) !!}
+                {!! Form::open(array('route'=>['admin.user.update',$user['id']],'method'=>'patch','class'=>'form-horizontal','role'=>'form')) !!}
                 <div class="form-group">
                     {!! Form::label('name',trans('labels.user.name'),['class'=>'col-sm-3 control-label no-padding-right']) !!}
                     <div class="col-sm-9">

@@ -26,7 +26,7 @@ class RoleRequest extends BaseRequest
         return [
             'id' => 'numeric',
             'name' => 'required',
-            'slug' => 'required|unique:permissions,slug,' . $this->id,
+            'slug' => 'required|unique:permissions,slug,' . endSegments(),
             'description' => 'required',
             'status' => 'required',
         ];

@@ -61,7 +61,7 @@ class UserRepository extends BaseRepository implements IUserRepository
     {
         $user = new User;
         $userData = $request->all();
-        $userData['password'] = $request->get('password', '123456');
+        $userData['password'] = bcrypt($request->get('password', '123456'));
         if ($user->fill($userData)->save()) {
             if (isset($userData['permission']))
                 $user->permission()->sync($userData['permission']);
@@ -114,6 +114,18 @@ class UserRepository extends BaseRepository implements IUserRepository
 
     public function update($id, $request)
     {
-        // TODO: Implement update() method.
+        $user = $this->verifyUser($id);
+        $userData = $request->all();
+        $userData['password'] = bcrypt($request->get('password', '123456'));
+        if ($user->fill($userData)->save()) {
+            if (isset($userData['permission']))
+                $user->permission()->sync($userData['permission']);
+            if (isset($userData['roles']) && $userData['roles'])
+                $user->role()->sync($userData['roles']);
+            Flash::success(trans('alerts.user.updateSuccess'));
+            return true;
+        }
+        Flash::error(trans('alerts.user.updateFailed'));
+        return false;
     }
 }
