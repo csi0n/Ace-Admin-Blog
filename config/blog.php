@@ -6,12 +6,12 @@
  * Time: 18:40
  */
 return [
-    'title' => '华清哥|csi0n',
-    'describe' => '华清哥|csi0n|',
-    'img_prefix' => 'http://img.csi0n.com/',
+    'title' => 'Blog',
+    'describe' => 'Blog',
+    'img_prefix' => '',
     'css' => [
         'markdown' => 'blog/asset/markdown.css',
     ],
-    'sync_pwd' => 'chq5201314',
+    'sync_pwd' => '',
     'page' => 10,
 ];
